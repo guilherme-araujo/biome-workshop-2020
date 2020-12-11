@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "eventos",
+  "info": {
+    "name": "evento",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "inicio": {
+      "type": "datetime",
+      "required": true
+    },
+    "fim": {
+      "type": "datetime"
+    },
+    "detalhe": {
+      "type": "string"
+    },
+    "tipo": {
+      "type": "string"
+    },
+    "speaker": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+version: '3'
+services:
+  strapi:
+    image: strapi/strapi
+    volumes:
+      - ./strapi:/srv/app
+    ports:
+      - '1340:1337'
+    restart: unless-stopped
+  front:
+    build: front/
+    ports:
+      - 3000:3000
+    volumes:
+      - ./front:/usr/src/app
+      - /usr/src/app/node_modules/
+      - /usr/src/app/.next/
+    #restart: unless-stopped
