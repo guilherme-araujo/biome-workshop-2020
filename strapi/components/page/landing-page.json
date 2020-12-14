@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_page_landing_pages",
+  "info": {
+    "name": "LandingPage",
+    "icon": "address-card"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "comp.title"
+    },
+    "Presentation": {
+      "type": "component",
+      "repeatable": false,
+      "component": "comp.presentation"
+    }
+  }
+}

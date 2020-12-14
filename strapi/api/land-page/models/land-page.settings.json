@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "land_pages",
+  "info": {
+    "name": "LandPage"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "MainContent": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.landing-page"
+    }
+  }
+}

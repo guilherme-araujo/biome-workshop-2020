@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dia_eventos",
+  "info": {
+    "name": "DiaEvento"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "dia": {
+      "type": "date"
+    },
+    "eventos": {
+      "via": "diaEvento",
+      "collection": "evento"
+    }
+  }
+}

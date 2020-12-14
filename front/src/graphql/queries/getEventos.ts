@@ -1,16 +1,17 @@
 const GET_EVENTOS = /* GraphQL */ `
 {
-    eventos{
+  diaEventos(sort: "dia:asc"){
+    dia
+    eventos(sort: "inicio:asc"){
       titulo
-      id
-      created_at
+      tipo
       inicio
       fim
-      detalhe
-      tipo
       speaker
+      showDate
     }
   }
+}
 `
 
 export default GET_EVENTOS

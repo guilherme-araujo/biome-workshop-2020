@@ -1,31 +1,41 @@
-import { Row, Col } from 'react-bootstrap';
-import Moment from "react-moment";
+import { Col } from 'react-bootstrap';
 import { Evento } from '../../types/api';
 
 type Props = {
   evento: Evento
+  num: number
 }
 
-export default function EventItem({ evento }: Props) {
+export default function EventItem({ evento, num }: Props) {
   return (
-    <Row className="p-3">
-      <Col xl={8} lg={8} md={6} sm={12} xs={12} className="">
+      <>
+      <Col xl={2} className={  (num % 2 ? 'bg-row-1' : 'bg-row-2') }>
         <div className="">
-          <Moment format="DD/MM/YYYY HH:mm">{evento.inicio}</Moment>
+
+          {
+            evento.showDate ? (
+              evento.inicio.substr(0,5)
+            ) : ( '' )
+          }
+
           {
             (evento.fim) ? (
               <>
                 <strong> até </strong>
-                <Moment format="HH:mm">{evento.fim}</Moment>
+                {evento.fim.substr(0,5)}
               </>
             ) : (
-              <> </>
-          )}
+                <> </>
+              )}
         </div>
-      <div className="">{evento.tipo}</div>
-      <div className="">{evento.detalhe}</div>
-      <div className="">{evento.speaker}</div>
       </Col>
-    </Row >
+      <Col xl={10} className={  (num % 2 ? 'bg-row-1' : 'bg-row-2') }>
+              <strong>{evento.tipo}: </strong>
+              <span>{evento.titulo}</span>
+              <br/>
+              <strong>{evento.speaker}</strong>
+      </Col>
+      </>
+
   )
 }

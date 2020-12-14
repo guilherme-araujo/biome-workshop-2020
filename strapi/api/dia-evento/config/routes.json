@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/dia-eventos",
+      "handler": "dia-evento.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/dia-eventos/count",
+      "handler": "dia-evento.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/dia-eventos/:id",
+      "handler": "dia-evento.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/dia-eventos",
+      "handler": "dia-evento.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/dia-eventos/:id",
+      "handler": "dia-evento.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/dia-eventos/:id",
+      "handler": "dia-evento.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

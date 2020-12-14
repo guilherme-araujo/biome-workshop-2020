@@ -2,7 +2,7 @@
   "kind": "collectionType",
   "collectionName": "eventos",
   "info": {
-    "name": "evento",
+    "name": "Evento",
     "description": ""
   },
   "options": {
@@ -11,25 +11,32 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "titulo": {
+    "tipo": {
       "type": "string",
       "required": true
     },
-    "inicio": {
-      "type": "datetime",
-      "required": true
-    },
-    "fim": {
-      "type": "datetime"
-    },
-    "detalhe": {
-      "type": "string"
-    },
-    "tipo": {
+    "titulo": {
       "type": "string"
     },
     "speaker": {
       "type": "string"
+    },
+    "inicio": {
+      "type": "time",
+      "private": false,
+      "required": true
+    },
+    "fim": {
+      "type": "time"
+    },
+    "showDate": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "diaEvento": {
+      "model": "dia-evento",
+      "via": "eventos"
     }
   }
 }

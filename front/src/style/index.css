@@ -68,3 +68,15 @@ a:visited {
 .dropdown > .dropdown-menu {
   margin-top: 0px;
 }
+
+.textMarkdown p img {
+  max-width: 100%;
+}
+
+.bg-row-1 {
+  background-color: lightgray;
+}
+
+.bg-row-2 {
+  background-color: gray;
+}

@@ -3,23 +3,29 @@ import { Container } from 'react-bootstrap'
 
 import client from '../graphql/client'
 import GET_EVENTOS from '../graphql/queries/getEventos'
+import GET_LANDING_PAGE_CONTENT from '../graphql/queries/getLandingPageContent'
 
-import { Evento } from '../types/api'
+import { DiaEvento, LandingPageContent } from '../types/api'
 
 import Layout from '../components/Layout'
-import EventItem from '../components/EventItem'
+import EventDay from '../components/EventDay'
 import HeadBanner from '../components/HeadBanner'
+import TextDisplay from '../components/TextDisplay'
 
 type Props = {
-  eventos: Array<Evento>
+  diaEventos: Array<DiaEvento>
+  landPage: LandingPageContent
 }
 
-const IndexPage = ({ eventos }: Props) => (
-  <Layout title="Workshop 2021 - BioME">
-    <HeadBanner>Workshop 2021 - BioME</HeadBanner>
+const IndexPage = ({ diaEventos, landPage }: Props) => (
+  <Layout title={landPage.MainContent.Title.titleText}>
+    <HeadBanner>{landPage.MainContent.Title.titleText}</HeadBanner>
+
     <Container className="py-5">
-      {eventos.map((evento, i) => (
-        <EventItem evento={evento} key={i} />
+      <TextDisplay text={ landPage.MainContent.Presentation.presentationText } />
+      <h5>Programação:</h5>
+      {diaEventos.map((dia, i) => (
+        <EventDay diaEvento={dia} key={i} />
       ))}
     </Container>
 
@@ -27,11 +33,13 @@ const IndexPage = ({ eventos }: Props) => (
 )
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { eventos } = await client.request(GET_EVENTOS)
+  const { diaEventos } = await client.request(GET_EVENTOS)
+  const { landPage } = await client.request(GET_LANDING_PAGE_CONTENT)
 
   return {
     props: {
-      eventos
+      diaEventos,
+      landPage
     }
   }
 }

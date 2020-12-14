@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/land-page",
+      "handler": "land-page.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/land-page",
+      "handler": "land-page.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/land-page",
+      "handler": "land-page.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
