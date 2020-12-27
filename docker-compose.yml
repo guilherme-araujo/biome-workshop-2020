@@ -1,9 +1,11 @@
 version: '3'
 services:
   strapi:
-    image: strapi/strapi
+    build: strapi/
     volumes:
-      - ./strapi:/srv/app
+      - ./strapi:/usr/app
+      - /usr/app/node_modules
+      - /usr/app/build
     ports:
       - '1340:1337'
     restart: unless-stopped

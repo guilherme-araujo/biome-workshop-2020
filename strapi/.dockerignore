@@ -1,0 +1,5 @@
+.strapi-updater.json
+.tmp
+.cache
+node_modules
+build

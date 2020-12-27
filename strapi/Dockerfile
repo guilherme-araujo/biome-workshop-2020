@@ -1,10 +1,16 @@
-FROM strapi/strapi
+FROM node:14.3-alpine
 
-RUN yarn add strapi-plugin-graphql
+RUN apk add bash
 
-#ENV NODE_ENV production
+RUN mkdir /usr/app
+WORKDIR /usr/app
 
+COPY package.json ./
+
+RUN yarn
+
+COPY . /usr/app
 
 EXPOSE 1337
 
-CMD ["yarn", "start"]
+CMD bash -c "yarn build && yarn develop"
