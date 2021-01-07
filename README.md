@@ -8,7 +8,7 @@ Run docker-compose up. This will start next.js in development mode and start str
 
 ## Production
 
-Replace front/Dockerfile with front/Dockerfile.prod then run docker-compose up
+Run docker-compose up in strapi/, then after it is runnung, run docker-compose up in front/. This will make sure content is pulled by next.js in the front-end correctly.
 
 ## Troubleshooting
 

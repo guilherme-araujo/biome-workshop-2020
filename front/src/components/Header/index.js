@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
+import { basePath } from '../../utils/basePath'
 
-const logo_wide = '/assets/logo_wide.png';
+const logo_wide = `${basePath}/assets/logo_wide.png`;
 
 export default function TopMenu() {
 

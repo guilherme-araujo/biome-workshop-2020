@@ -1,8 +1,8 @@
 import React from 'react';
-
 import { Container } from 'react-bootstrap';
+import { basePath } from '../../utils/basePath';
 
-const backinitial = '/assets/background.png';
+const backinitial = `${basePath}/assets/background.png`;
 
 export default function HeadBanner(props) {
     return (

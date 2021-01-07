@@ -1,11 +1,11 @@
 import React from 'react';
-
 import { Row, Col } from 'react-bootstrap';
+import { basePath } from '../../utils/basePath';
 
-const logo = '/assets/logo_wide.png';
-const faceIcon = '/assets/icons/face-icon.png';
-const twitterIcon = '/assets/icons/twitter-icon.png';
-const linkedinIcon = '/assets/icons/linkedin-icon.png';
+const logo = `${basePath}/assets/logo_wide.png`;
+const faceIcon = `${basePath}/assets/icons/face-icon.png`;
+const twitterIcon = `${basePath}/assets/icons/twitter-icon.png`;
+const linkedinIcon = `${basePath}/assets/icons/linkedin-icon.png`;
 
 export default function Footer() {
 

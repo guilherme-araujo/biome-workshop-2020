@@ -12,9 +12,7 @@ RUN yarn
 
 COPY . /usr/src/app
 
-RUN yarn build
-
 EXPOSE 3000
 
 # Running the app
-CMD "yarn" "start" 
+CMD bash -c "yarn build && yarn start"
